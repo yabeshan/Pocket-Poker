@@ -1,0 +1,30 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "MyApp"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "MyApp"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "MyApp"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "MyApp"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "MyApp"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "MyApp"
+        }
+    },
+    "dependent_plugins": {}
+}
