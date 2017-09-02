@@ -1,2 +1,2 @@
 # Pocket-Poker
-Pocket-Poker
+Pocket-Poker for messengers
