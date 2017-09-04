@@ -1,0 +1,31 @@
+cp-board {
+    .board-container {
+        background-image: url('http://yabeshan.github.io/Pocket-Poker/assets/avatars/bg.jpg');
+        width: 800px; 
+        height: 600px; 
+        position: absolute;
+        transform: rotate(0deg);
+    }
+
+    .rotate {
+        transform: rotate(-90deg);
+    }
+
+    .cards-holder {
+        width: 800px;
+        height: 600px;
+        // background-color: rgba(0,250,0,.1);
+        position: relative;
+        top: 0px;
+        left: 0px;
+    }
+
+    .room-holder {
+        width: 800px !important;
+        height: 600px !important;
+        // background-color: rgba(250,250,0,.9);
+        position: relative;
+        top: -600px;
+        left: 0px;
+    }
+}

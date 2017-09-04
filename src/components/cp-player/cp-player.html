@@ -1,0 +1,13 @@
+<div class="{{styles}}"
+    *ngIf="visible" 
+    [style.top.px]="top" 
+    [style.left.px]="left">
+
+    <div class="avatar">
+        <img src="{{image}}" style="width:90px">
+    </div>
+    <div class="label">
+        {{name}}<br>{{balance}}
+    </div>
+    
+</div>

@@ -25198,3 +25198,89 @@ ion-navbar.toolbar {
     padding-top: calc(16px + 20px);
   }
 }
+
+cp-board .board-container {
+  background-image: url("http://yabeshan.github.io/Pocket-Poker/assets/avatars/bg.jpg");
+  width: 800px;
+  height: 600px;
+  position: absolute;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+cp-board .rotate {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+cp-board .cards-holder {
+  width: 800px;
+  height: 600px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+cp-board .room-holder {
+  width: 800px !important;
+  height: 600px !important;
+  position: relative;
+  top: -600px;
+  left: 0px;
+}
+
+cp-bottom-menu .bottom-menu-container {
+  color: #FFFFFF;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  text-align: center;
+  font-size: 130%;
+}
+
+cp-bottom-menu .bottom-menu-holder {
+  margin-top: -10px;
+}
+
+cp-bottom-menu .bottom-menu-holder button {
+  color: #FFFFFF;
+}
+
+cp-player .player-container {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+cp-player .rotate {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+cp-player .avatar {
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+cp-player .label {
+  position: relative;
+  top: -10px;
+  left: -15px;
+  color: #FFFFFF;
+  text-align: center;
+  text-shadow: 2px 2px 2px black;
+  font-size: 120%;
+}
+
+page-home .game-container {
+  background-color: #3B2C13;
+  width: 100%;
+  height: 100%;
+  color: #FFFFFF;
+}

@@ -1,25 +1,40 @@
-import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import {Component} from '@angular/core';
+import {Platform} from 'ionic-angular';
+import {StatusBar} from '@ionic-native/status-bar';
+import {SplashScreen} from '@ionic-native/splash-screen';
 
-import { HomePage } from '../pages/home/home';
+import {
+	HomePage,
+} from '../pages';
+
+import {
+	ApiProvider,
+	ResizeProvider,
+} from '../providers';
+
 @Component({
-  templateUrl: 'app.html'
+	template: '<ion-nav [root]="rootPage"></ion-nav>'
 })
-export class MyApp {
-  rootPage:any = HomePage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
-    platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      // statusBar.styleDefault();
-      setTimeout(()=>{
-        splashScreen.hide();
-      },15000);
-      
-    });
-  }
+export class MyApp {
+	
+	rootPage:any = HomePage;
+
+	constructor(
+		private platform: Platform, 
+		private statusBar: StatusBar, 
+		private splashScreen: SplashScreen,
+		// ApiProvider = init connect to backend
+		private api: ApiProvider, 
+		// ResizeProvider = init resize and rotation
+		private resizer: ResizeProvider,
+	) {
+		platform.ready().then(() => {
+			statusBar.styleDefault();
+			setTimeout(()=>{
+				splashScreen.hide();
+			},3000);
+    	});
+  	}
 }
 

@@ -1,0 +1,22 @@
+cp-bottom-menu {
+    .bottom-menu-container {
+        color: #FFFFFF;
+        background-color: rgba(0,0,0,.7);
+        width: 100%;
+        height: 40px;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        text-align: center;
+        font-size: 130%;
+    }
+
+    .bottom-menu-holder {
+        
+        margin-top: -10px;
+
+        button {
+            color: #FFFFFF;
+        }
+    }
+}

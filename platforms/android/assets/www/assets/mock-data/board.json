@@ -1,0 +1,30 @@
+{
+    "players":[{
+
+    },{
+
+    },{
+        "id":11111,
+        "name":"Timothy Burton",
+        "balance":"543.2",
+        "image":"assets/avatars/avatar_boy.png"
+    },{
+
+    },{
+        "id":22222,
+        "name":"Толя Янот",
+        "balance":"123.4K",
+        "image":"assets/avatars/avatar_me.png"
+    },{
+        
+    },{
+
+    },{
+        
+    },{
+        "id":33333,
+        "name":"A.L.I.C.E",
+        "balance":"800K",
+        "image":"assets/avatars/avatar_girl.png"
+    }]
+}
