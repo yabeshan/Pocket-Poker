@@ -45,15 +45,30 @@ export class CpRoom {
 
     constructor () {
         //
-    }
+    } 
 
     ngOnInit() {
         ApiProvider.boardAction.subscribe(data=>this.boardActionHandler(data));
+
+        ApiProvider.animAction.subscribe(
+            (data: RequestModel) => this.parseAction(data)
+        );
+    }
+
+    parseAction(data: RequestModel) {
+        if (data == null || !data.type || data.type != "player") {
+            return;
+        }
+        
+        if (data.data["action"] == "anim") {
+            let bm: BoardModel = new BoardModel();
+            bm.type = "anim";
+            this["player"+ data.data["player"] ].next(bm);
+        }
     }
 
 	boardActionHandler(data: RequestModel) {
 		if (data && data.type == REQUEST_UPDATE && data.data["players"]) {
-            // console.log ("Room boardActionHandler", data.data["players"]);
             this.parseAllPlayers(data.data["players"]);
 		}
     }
@@ -73,6 +88,7 @@ export class CpRoom {
      
     initPlayer(id: number, model: PlayerModel) {
         let bm: BoardModel = new BoardModel();
+        bm.type = "position";
         bm.player = model;
         bm.position = new PositionModel(this.positionPlayers[id]["x"],this.positionPlayers[id]["y"],1);
         this["player"+id].next(bm);

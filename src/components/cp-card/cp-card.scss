@@ -1,0 +1,90 @@
+cp-card {
+
+    .card {
+        position: absolute;
+        width: 30px;
+        transition-property: top left transform width height;
+        transition-duration: 1s;
+    }
+
+    .pos0 {
+        top: 90px;
+        left: 380px;
+        width: 30px;
+    }
+    
+    .posMaxi {
+        width: 30000px;
+        top: -150px;
+        left: -150px;
+        transform: rotate(30deg);
+    }
+
+    .pos21 {
+        top: 355px;
+        left: 610px;
+        transform: rotate(-10deg);
+    }
+    .pos22 {
+        top: 360px;
+        left: 630px;
+    }
+
+    .pos41 {
+        top: 470px;
+        left: 310px;
+        transform: rotate(-10deg);
+    }
+    .pos41open {
+        top: 430px;
+        left: 390px;
+        width: 60px;
+        transform: rotate(0deg);
+    }
+    .pos42 {
+        top: 475px;
+        left: 330px;
+    }
+    .pos42open {
+        top: 430px;
+        left: 340px;
+        width: 60px;
+    }
+
+    .pos81 {
+        top: 90px;
+        left: 140px;
+        transform: rotate(-10deg);
+    }
+    .pos82 {
+        top: 95px;
+        left: 160px;
+    }
+    
+    .board1 {
+        top: 250px;
+        left: 240px;
+        width: 60px;
+    }
+    .board2 {
+        top: 250px;
+        left: 305px;
+        width: 60px;
+    }
+    .board3 {
+        top: 250px;
+        left: 370px;
+        width: 60px;
+    }
+    .board4 {
+        top: 250px;
+        left: 435px;
+        width: 60px;
+    }
+    .board5 {
+        top: 250px;
+        left: 500px;
+        width: 60px;
+    }
+
+}

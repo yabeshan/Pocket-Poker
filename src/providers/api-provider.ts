@@ -13,11 +13,14 @@ export const REQUEST_COMPLETE : string = "REQUEST_COMPLETE";
 @Injectable()
 export class ApiProvider {
 
+    // userAction = login logout getUser setBet getCard getBalance
+    public static userAction: BehaviorSubject<RequestModel> = new BehaviorSubject(null);  
+
     // boardAction = getPlayers getStatus
     public static boardAction: BehaviorSubject<RequestModel> = new BehaviorSubject(new RequestModel('loading')); 
 
-    // userAction = login logout getUser setBet getCard getBalance
-    public static userAction: BehaviorSubject<RequestModel> = new BehaviorSubject(null);  
+    // animAction = cards players
+    public static animAction: BehaviorSubject<RequestModel> = new BehaviorSubject(null); 
 
     constructor (
         private http: Http,

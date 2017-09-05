@@ -18,11 +18,43 @@ cp-player {
 
     .label {
         position: relative;
-        top:-10px;
+        top:-5px;
         left:-15px;
         color: #FFFFFF;
         text-align: center;
         text-shadow: 2px 2px 2px black;
         font-size: 120%;
+    }
+
+    .circle-anim-container {
+        position: relative;
+        top: -99px;
+        left: -5px;
+        width: 0px;
+        height: 0px;
+
+        circle {
+            transform: rotate(-90deg);
+            fill: none;
+            stroke: white;
+            stroke-width: 5;
+            stroke-dasharray: 295;
+            stroke-dashoffset: 295;
+        }
+    }
+
+    .circle-anim-start {
+        circle {
+            animation: rotate 10s linear;
+        }
+    }
+    
+    @keyframes rotate {
+        from {
+            stroke-dashoffset: 590;
+        }
+        to {
+            stroke-dashoffset: 295;
+        }
     }
 }

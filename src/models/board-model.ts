@@ -6,6 +6,7 @@ import {
 
 export class BoardModel {
 
+    type?: string;
     position?: PositionModel;
     player?: PlayerModel;
     

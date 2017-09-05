@@ -5,9 +5,11 @@ import {
     BoardModel,
     PositionModel,
     PlayerModel,
+    RequestModel,
 } from '../../models';
 
 import {
+    ApiProvider,
     ResizeProvider,
 } from '../../providers';
 
@@ -28,6 +30,7 @@ export class CpPlayer {
     image: string = "";
 
     styles: string = "player-container";
+    animStyles: string = "circle-anim-container";
     top: number = 0;
     left: number = 0;
 
@@ -36,20 +39,25 @@ export class CpPlayer {
     }
 
     ngOnInit() {
-        this.playerAction.subscribe(data=> this.initPlayer(data));
-        ResizeProvider.rotationAction.subscribe((angle: string)=>{
-            this.rotationActionHandler(angle);
-        });
+        this.playerAction.subscribe(
+            (data: BoardModel)=> this.initPlayer(data)
+        );
+        ResizeProvider.rotationAction.subscribe(
+            (angle: string)=>this.rotationActionHandler(angle)
+        );
     }
 
     initPlayer(model: BoardModel) {
-        if (model == null || model.player == null) {
+        if (model == null) {
             this.model = null;
             this.visible = false;
             this.name = "";
             this.balance = "";
             this.image = "";
-        } else {
+            return;
+        } 
+        
+        if (model.type=="position" && model.player != null) {
             this.model = model.player;
             this.visible = true;
             this.name = this.model.name;
@@ -61,10 +69,16 @@ export class CpPlayer {
                 this.left = this.position.x;
             }
         }
+
+        if (model.type=="anim") {
+            this.animStyles = "circle-anim-container";
+            setTimeout(()=>{
+                this.animStyles = "circle-anim-container circle-anim-start";
+            },50);
+        }
     }
 
     rotationActionHandler(angle: string) {
         this.styles = "player-container " + angle;
     }
-
 }

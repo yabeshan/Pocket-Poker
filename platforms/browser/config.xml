@@ -20,10 +20,10 @@
     <preference name="android-minSdkVersion" value="16" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="SplashMaintainAspectRatio" value="true" />
-    <preference name="FadeSplashScreenDuration" value="3000000" />
+    <preference name="FadeSplashScreenDuration" value="3000" />
     <preference name="SplashShowOnlyFirstTime" value="false" />
     <preference name="SplashScreen" value="assets/loading.png" />
-    <preference name="SplashScreenDelay" value="3000000" />
+    <preference name="SplashScreenDelay" value="15000" />
     <preference name="SplashScreenBackgroundColor" value="#000000" />
     <preference name="ShowSplashScreen" value="true" />
     <preference name="SplashScreenWidth" value="200" />

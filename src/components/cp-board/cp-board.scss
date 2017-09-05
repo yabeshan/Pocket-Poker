@@ -11,15 +11,6 @@ cp-board {
         transform: rotate(-90deg);
     }
 
-    .cards-holder {
-        width: 800px;
-        height: 600px;
-        // background-color: rgba(0,250,0,.1);
-        position: relative;
-        top: 0px;
-        left: 0px;
-    }
-
     .room-holder {
         width: 800px !important;
         height: 600px !important;
@@ -28,4 +19,15 @@ cp-board {
         top: -600px;
         left: 0px;
     }
+    
+    .dealer-holder {
+        width: 800px;
+        height: 600px;
+        // background-color: rgba(0,250,0,.1);
+        position: relative;
+        top: 0px;
+        left: 0px;
+        z-index: 10000;
+    }
+
 }

@@ -8,8 +8,13 @@ import {
 } from '../pages';
 
 import {
+	RequestModel,
+} from '../models';
+
+import {
 	ApiProvider,
 	ResizeProvider,
+	REQUEST_UPDATE,
 } from '../providers';
 
 @Component({
@@ -33,8 +38,10 @@ export class MyApp {
 			statusBar.styleDefault();
 			setTimeout(()=>{
 				splashScreen.hide();
+				let data: RequestModel = new RequestModel(REQUEST_UPDATE, true, {'action':"start-game"});
+				ApiProvider.boardAction.next(data);
 			},3000);
-    	});
+		});
   	}
 }
 
