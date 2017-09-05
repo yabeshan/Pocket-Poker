@@ -565,7 +565,7 @@ var CpBoard = (function () {
         __WEBPACK_IMPORTED_MODULE_2__providers__["c" /* ResizeProvider */].rotationAction.next(this.rotatePlayer);
         this.zoom = (this.zoomX < this.zoomY) ? this.zoomX : this.zoomY;
         var dist = (h - 600 * this.zoom) * 0.5 / this.zoom;
-        if (dist > 100) {
+        if (dist >= 100) {
             this.top = dist;
         }
         else {
@@ -587,7 +587,7 @@ var CpBoard = (function () {
 }());
 CpBoard = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'cp-board',template:/*ion-inline-start:"D:\Nick_work\poker\Pocket-Poker\src\components\cp-board\cp-board.html"*/'<div class="{{styles}}" \n\n    [style.zoom]="zoom" \n\n    [style.top.px]="top"\n\n    [style.left.px]="left">\n\n\n\n    <div class="cards-holder">\n\n            <!-- cards-holder -->\n\n    </div>\n\n    <div class="room-holder">\n\n        <cp-room></cp-room>\n\n    </div>\n\n\n\n</div>'/*ion-inline-end:"D:\Nick_work\poker\Pocket-Poker\src\components\cp-board\cp-board.html"*/
+        selector: 'cp-board',template:/*ion-inline-start:"D:\Nick_work\poker\Pocket-Poker\src\components\cp-board\cp-board.html"*/'<div class="{{styles}}" \n\n    [style.zoom]="zoom" \n\n    [style.-moz-transform]="\'scale(\'+zoom+\')\'"\n\n    [style.top.px]="top"\n\n    [style.left.px]="left">\n\n\n\n    <div class="cards-holder">\n\n            <!-- cards-holder -->\n\n    </div>\n\n    <div class="room-holder">\n\n        <cp-room></cp-room>\n\n    </div>\n\n\n\n</div>'/*ion-inline-end:"D:\Nick_work\poker\Pocket-Poker\src\components\cp-board\cp-board.html"*/
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Platform */]) === "function" && _a || Object])
 ], CpBoard);
@@ -750,7 +750,7 @@ var CpPlayer = (function () {
 }());
 __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["E" /* Input */])(),
-    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__["BehaviorSubject"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__["BehaviorSubject"]) === "function" && _a || Object)
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__["BehaviorSubject"])
 ], CpPlayer.prototype, "playerAction", void 0);
 CpPlayer = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -759,7 +759,6 @@ CpPlayer = __decorate([
     __metadata("design:paramtypes", [])
 ], CpPlayer);
 
-var _a;
 //# sourceMappingURL=cp-player.js.map
 
 /***/ }),

@@ -513,6 +513,7 @@ var CpBoard = (function () {
     function CpBoard(platform) {
         this.platform = platform;
         this.styles = "board-container";
+        this.rotatePlayer = "";
         this.top = 0;
         this.left = 0;
         this.zoom = 1;
@@ -547,17 +548,15 @@ var CpBoard = (function () {
     CpBoard.prototype.boardPosition = function (w, h, isLandscape) {
         if (isLandscape) {
             this.styles = "board-container";
-            // this.rotate = 0;
-            this.rotatePlayer = "0";
+            this.rotatePlayer = "";
             this.top = 0;
             this.left = 0;
             this.zoomX = w / 800;
             this.zoomY = h / ((h < 500) ? 640 : 600);
         }
         else {
-            this.styles = "board-container-rotate";
-            // this.rotate = -90;
-            this.rotatePlayer = "90";
+            this.styles = "board-container rotate";
+            this.rotatePlayer = "rotate";
             this.top = 0;
             this.left = -100;
             this.zoomX = h / 800;
@@ -565,45 +564,24 @@ var CpBoard = (function () {
         }
         __WEBPACK_IMPORTED_MODULE_2__providers__["c" /* ResizeProvider */].rotationAction.next(this.rotatePlayer);
         this.zoom = (this.zoomX < this.zoomY) ? this.zoomX : this.zoomY;
-        var dist = (w - 800 * this.zoom);
-        if (dist > 20) {
-            this.left = dist * 0.5 / this.zoom;
+        var dist = (h - 600 * this.zoom) * 0.5 / this.zoom;
+        if (dist > 100) {
+            this.top = dist;
         }
         else {
-            this.top = (h - 600 * this.zoom) * 0.5 / this.zoom;
+            this.left = (w - 800 * this.zoom) * 0.5 / this.zoom;
         }
-    };
-    CpBoard.prototype.mobilePosition = function (w, h, isLandscape) {
-        var o = window.orientation + "";
         /*
-                console.log (model);
-                // 800x600
-                let w: number = model.x;
-                let h: number = model.y;
-        
-                if (model.isLandscape == true) {
-                    if (w > 0 && h > 0) {
-                        this.zoomX = w / 810;
-                        this.zoomY = h / 640;
-                        this.zoom = (this.zoomX < this.zoomY) ? this.zoomX : this.zoomY;
-                        // console.log ("resizeActionHandler", this.zoom, model.x);
-                    }
-                    this.rotate = 0;
-                    this.top = 0;
-                    this.left = 400 * this.zoom;
-                } else {
-        
-                    if (w > 0 && h > 0) {
-                        this.zoomX = h / 800;
-                        this.zoomY = w / 600;
-                        this.zoom = (this.zoomX < this.zoomY) ? this.zoomX : this.zoomY;
-                        // console.log ("resizeActionHandler", this.zoom, model.x);
-                    }
-                    this.rotate = -90;
-                    this.top = 400 * this.zoom;
-                    this.left = -100;//600 * this.zoom;
-                }
-                */
+        let dist: number = (w - 800 * this.zoom);
+        if (dist > 20) {
+            this.left = dist * 0.5 / this.zoom;
+        } else {
+            this.top = (h - 600 * this.zoom) * 0.5 / this.zoom;
+            if (this.top == 100) {
+                this.left = dist * 0.5 / this.zoom;
+            }
+        }
+        */
     };
     return CpBoard;
 }());
@@ -731,7 +709,7 @@ var CpPlayer = (function () {
         this.name = "";
         this.balance = "";
         this.image = "";
-        this.rotate = "0";
+        this.styles = "player-container";
         this.top = 0;
         this.left = 0;
         //
@@ -765,7 +743,7 @@ var CpPlayer = (function () {
         }
     };
     CpPlayer.prototype.rotationActionHandler = function (angle) {
-        this.rotate = angle;
+        this.styles = "player-container " + angle;
     };
     return CpPlayer;
 }());
@@ -775,7 +753,7 @@ __decorate([
 ], CpPlayer.prototype, "playerAction", void 0);
 CpPlayer = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'cp-player',template:/*ion-inline-start:"D:\Nick_work\poker\Pocket-Poker\src\components\cp-player\cp-player.html"*/'<div class="player-container" \n\n    *ngIf="visible" \n\n    [style.top.px]="top" \n\n    [style.left.px]="left"\n\n    [style.transform]="\'rotate(\' + rotate + \'deg)\'" >\n\n\n\n    <div class="avatar">\n\n        <img src="{{image}}" style="width:90px">\n\n    </div>\n\n    <div class="label">\n\n        {{name}}<br>{{balance}}\n\n    </div>\n\n    \n\n</div>'/*ion-inline-end:"D:\Nick_work\poker\Pocket-Poker\src\components\cp-player\cp-player.html"*/
+        selector: 'cp-player',template:/*ion-inline-start:"D:\Nick_work\poker\Pocket-Poker\src\components\cp-player\cp-player.html"*/'<div class="{{styles}}"\n\n    *ngIf="visible" \n\n    [style.top.px]="top" \n\n    [style.left.px]="left">\n\n\n\n    <div class="avatar">\n\n        <img src="{{image}}" style="width:90px">\n\n    </div>\n\n    <div class="label">\n\n        {{name}}<br>{{balance}}\n\n    </div>\n\n    \n\n</div>'/*ion-inline-end:"D:\Nick_work\poker\Pocket-Poker\src\components\cp-player\cp-player.html"*/
     }),
     __metadata("design:paramtypes", [])
 ], CpPlayer);

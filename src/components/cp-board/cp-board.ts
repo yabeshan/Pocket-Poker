@@ -83,23 +83,11 @@ export class CpBoard {
         this.zoom = (this.zoomX < this.zoomY) ? this.zoomX : this.zoomY;
 
         let dist: number = (h - 600 * this.zoom) * 0.5 / this.zoom;
-        if (dist > 100) {
+        if (dist >= 100) {
             this.top = dist;
         } else {
             this.left = (w - 800 * this.zoom) * 0.5 / this.zoom;
         }
-
-        /*
-        let dist: number = (w - 800 * this.zoom);
-        if (dist > 20) {
-            this.left = dist * 0.5 / this.zoom;
-        } else {
-            this.top = (h - 600 * this.zoom) * 0.5 / this.zoom;
-            if (this.top == 100) {
-                this.left = dist * 0.5 / this.zoom;
-            }
-        }
-        */
     }
 
 }

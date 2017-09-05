@@ -25208,11 +25208,7 @@ cp-board .board-container {
   transform: rotate(0deg);
 }
 
-cp-board .board-container-rotate {
-  background-image: url("http://yabeshan.github.io/Pocket-Poker/assets/avatars/bg.jpg");
-  width: 800px;
-  height: 600px;
-  position: absolute;
+cp-board .rotate {
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
@@ -25257,6 +25253,13 @@ cp-player .player-container {
   position: absolute;
   width: 120px;
   height: 120px;
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+cp-player .rotate {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 cp-player .avatar {

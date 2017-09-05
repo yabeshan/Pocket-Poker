@@ -25208,7 +25208,7 @@ cp-board .board-container {
   transform: rotate(0deg);
 }
 
-cp-board .rotate {
+cp-board .board-container-rotate {
   -webkit-transform: rotate(-90deg);
   transform: rotate(-90deg);
 }
